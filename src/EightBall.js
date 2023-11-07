@@ -1,37 +1,27 @@
 import React, { useState } from "react";
 import "./EightBall.css";
 
-const Eightball = ({ list }) => {
+const EightBall = ({ list }) => {
+  const genRandomIdx = () => Math.floor(Math.random() * list.length);
+  const nextAnswer = () => {
+    let i = genRandomIdx();
+    setColor(list[i].color);
+    setAnswer(list[i].msg);
+    console.log(i);
+  };
+  const [color, setColor] = useState("black");
+  const [answer, setAnswer] = useState("Think of a Question");
+
   return (
-    <div>
-      <h1>Working</h1>
+    <div
+      className="EightBall-circle"
+      style={{ backgroundColor: color }}
+      onClick={nextAnswer}>
+      <div className="EightBall-container">
+        <p className="EightBall-title">{answer}</p>
+      </div>
     </div>
   );
 };
-// const NumberGame = (props) => {
-//   const genRandom = () => Math.floor(Math.random() * 10) + 1;
-//   const restart = () => {
-//     setTarget(genRandom());
-//     setGuess(0);
-//     setGuessCount(0);
-//   };
-//   const makeGuess = () => {
-//     setGuess(genRandom());
-//     setGuessCount(guessCount + 1);
-//   };
-//   const [guess, setGuess] = useState(genRandom());
-//   const [target, setTarget] = useState(genRandom());
-//   const [guessCount, setGuessCount] = useState(0);
-//   const isWinner = target === guess;
-//   return (
-//     <div className="NumberGame">
-//       <h1>Target Num: {target} </h1>
-//       <h1 className={isWinner ? "winner" : "loser"}>Your Guess: {guess}</h1>
-//       <h4>Guess # {guessCount}</h4>
-//       {!isWinner && <button onClick={makeGuess}>Generate Num</button>}
-//       <button onClick={restart}>New Game</button>
-//     </div>
-//   );
-// };
 
-export default Eightball;
+export default EightBall;

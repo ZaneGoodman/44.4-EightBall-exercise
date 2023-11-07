@@ -1,10 +1,11 @@
 import "./App.css";
-import Eightball from "./EightBall";
+import EightBall from "./EightBall";
+import answers from "./answers";
 
 function App() {
   return (
     <div className="App">
-      <Eightball />
+      <EightBall list={answers} />
     </div>
   );
 }

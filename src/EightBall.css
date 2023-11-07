@@ -1,0 +1,20 @@
+.EightBall-circle {
+  background: black;
+  border-radius: 50%;
+  height: 600px;
+  width: 600px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+.EightBall-container {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -50px;
+}
+.EightBall-title {
+  color: white;
+}
